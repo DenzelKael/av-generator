@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a584c0105c705ad48d4c9000e1793474",
+    "content-hash": "fb9510b9239ce15d15717f4a936e2945",
     "packages": [
         {
             "name": "brick/math",
@@ -133,6 +133,73 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "colorlibhq/adminlte-laravel",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColorlibHQ/adminlte-laravel",
+                "reference": "d7cdf9af8eae5b57743d2615474197a49e4a2622"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ColorlibHQ/adminlte-laravel/zipball/d7cdf9af8eae5b57743d2615474197a49e4a2622",
+                "reference": "d7cdf9af8eae5b57743d2615474197a49e4a2622",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "illuminate/view": "^13.0",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.10",
+                "laravel/pint": "^1.30",
+                "orchestra/testbench": "^11.2",
+                "phpunit/phpunit": "^12.4 || ^13.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ColorlibHQ\\AdminLte\\AdminLteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ColorlibHQ\\AdminLte\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colorlib",
+                    "homepage": "https://colorlib.com"
+                }
+            ],
+            "description": "Official AdminLTE 4 integration for Laravel — Bootstrap 5.3, vanilla JS, Vite-ready.",
+            "homepage": "https://adminlte.io",
+            "keywords": [
+                "AdminLTE",
+                "admin",
+                "blade",
+                "bootstrap",
+                "bootstrap5",
+                "dashboard",
+                "laravel",
+                "template",
+                "vite"
+            ],
+            "support": {
+                "issues": "https://github.com/ColorlibHQ/adminlte-laravel/issues",
+                "source": "https://github.com/ColorlibHQ/adminlte-laravel"
+            },
+            "time": "2026-08-19T10:45:35+00:00"
         },
         {
             "name": "composer/pcre",

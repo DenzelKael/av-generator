@@ -7,6 +7,8 @@ use App\Models\MaterialMovement;
 use App\Services\MaterialMovement\MaterialMovementImportService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Validation\ValidationException;
+use Throwable;
 
 class MaterialMovementController extends Controller
 {
@@ -16,12 +18,14 @@ class MaterialMovementController extends Controller
 
     public function index(): View
     {
-        return view('material-movements.index', [
-            'movements' => MaterialMovement::query()
-                ->withCount('items')
-                ->latest()
-                ->take(10)
-                ->get(),
+        $movements = MaterialMovement::query()
+            ->withCount('items')
+            ->latest()
+            ->take(10)
+            ->get();
+
+        return view('material-movements.create', [
+            'movements' => $movements,
         ]);
     }
 
@@ -29,6 +33,7 @@ class MaterialMovementController extends Controller
         StoreMaterialMovementRequest $request
     ): RedirectResponse {
         try {
+
             $this->importService->import(
                 $request->file('document')
             );
@@ -38,16 +43,17 @@ class MaterialMovementController extends Controller
                     'success',
                     'Documento importado y movimiento registrado correctamente.'
                 );
-        } catch (\Illuminate\Validation\ValidationException $e) {
+        } catch (ValidationException $e) {
+
             throw $e;
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
+
             report($e);
 
             return back()
                 ->withInput()
                 ->withErrors([
-                    'document' =>
-                    'Ocurrió un error al procesar el documento.',
+                    'document' => 'Ocurrió un error al procesar el documento.',
                 ]);
         }
     }
