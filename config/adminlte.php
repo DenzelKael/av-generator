@@ -18,8 +18,8 @@ return [
     */
 
     'title' => 'AV GENERATOR',
-    'title_prefix' => '',
-    'title_postfix' => '',
+    'title_prefix' => '-',
+    'title_postfix' => '-',
 
     /*
     |--------------------------------------------------------------------------
@@ -27,8 +27,8 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     */
 
     'logo' => '',
-    'logo_img' => 'vendor/adminlte/img/AdminLTELogo.png',
+    'logo_img' => '', //add new logo
     'logo_img_class' => 'brand-image opacity-75 shadow',
     'logo_img_alt' => '',
 
@@ -68,7 +68,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/img/AdminLTELogo.png',
+            'path' => '', //add new logo
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -124,8 +124,8 @@ return [
     |
     */
 
-    'footer_left' => 'Copyright &copy; 2014-' . date('Y') . ' <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>. All rights reserved.',
-    'footer_right' => 'Anything you want',
+    'footer_left' => '',
+    'footer_right' => 'Copyright &copy; ' . date('Y') . ' Corporations ZED. All rights reserved.',
     'preloader' => false,
     'control_sidebar' => false,
     'control_sidebar_theme' => 'dark',

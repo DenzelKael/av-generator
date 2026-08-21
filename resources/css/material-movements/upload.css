@@ -1,0 +1,14 @@
+.dropzone {
+    min-height: 250px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+}
+
+
+.dropzone .dz-message {
+    margin: 60px 0;
+}
+
+.dropzone .dz-preview {
+    margin: 10px;
+}

@@ -34,14 +34,14 @@ class MaterialMovementController extends Controller
     ): RedirectResponse {
         try {
 
-            $this->importService->import(
-                $request->file('document')
-            );
+            foreach ($request->file('documents') as $document) {
+                $this->importService->import($document);
+            }
 
             return to_route('material-movements.index')
                 ->with(
                     'success',
-                    'Documento importado y movimiento registrado correctamente.'
+                    'Documentos importados y movimientos registrados correctamente.'
                 );
         } catch (ValidationException $e) {
 
@@ -53,7 +53,7 @@ class MaterialMovementController extends Controller
             return back()
                 ->withInput()
                 ->withErrors([
-                    'document' => 'Ocurrió un error al procesar el documento.',
+                    'documents' => 'Ocurrió un error al procesar los documentos.',
                 ]);
         }
     }

@@ -26,3 +26,11 @@
         </div>
     </div>
 @stop
+@push('css')
+    @vite('resources/css/material-movements/upload.css')
+@endpush
+
+
+@push('js')
+    @vite('resources/js/material-movements/upload.js')
+@endpush
